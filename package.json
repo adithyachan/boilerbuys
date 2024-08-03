@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@mantine/carousel": "^7.11.2",
+    "@mantine/colors-generator": "^7.11.2",
     "@mantine/core": "^7.11.2",
     "@mantine/dates": "^7.11.2",
     "@mantine/dropzone": "^7.11.2",
@@ -23,6 +24,7 @@
     "@mantine/spotlight": "^7.11.2",
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.44.4",
+    "chroma-js": "^2.6.0",
     "dayjs": "^1.11.12",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.32.1",
