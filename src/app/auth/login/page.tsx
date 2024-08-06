@@ -1,11 +1,7 @@
-"use client";
-//import { login, signup } from "./actions";
-import { Anchor, Paper, Title, Text, Container, Button } from "@mantine/core";
-
-import { FaMicrosoft } from "react-icons/fa";
+import { Anchor, Paper, Title, Text, Container } from "@mantine/core";
+import { LoginForm } from "@/app/auth/login/login-form";
 
 export default function Login() {
-  const handleLogin = () => {};
   return (
     <Container size={420} my={40}>
       <Title ta="center" className="font-extrabold">
@@ -19,15 +15,7 @@ export default function Login() {
       </Text>
 
       <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-        <Text>Sign in using your Purdue outlook account</Text>
-        <Button
-          fullWidth
-          mt="sm"
-          leftSection={<FaMicrosoft />}
-          onClick={handleLogin}
-        >
-          Sign in to Outlook
-        </Button>
+        <LoginForm />
       </Paper>
     </Container>
   );
