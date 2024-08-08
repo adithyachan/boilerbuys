@@ -29,7 +29,6 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.32.1",
     "embla-carousel-react": "^8.1.7",
-    "firebase": "^10.12.5",
     "mrm": "^2.6.2",
     "next": "14.2.5",
     "postgres": "^3.4.4",

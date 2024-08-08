@@ -1,5 +1,6 @@
 import { Anchor, Paper, Title, Text, Container } from "@mantine/core";
 import { LoginForm } from "@/app/auth/login/login-form";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -10,7 +11,7 @@ export default function Login() {
       <Text c="dimmed" size="sm" ta="center" mt={5}>
         Do not have an account yet?{" "}
         <Anchor size="sm" component="button">
-          Create account
+          <Link href="/auth/signup">Create account</Link>
         </Anchor>
       </Text>
 

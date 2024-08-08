@@ -22,4 +22,10 @@ type SignUpError = {
   message: string;
 };
 
-export type { LoginCode, SignUpCode, SignUpError, LoginError };
+// SignOut
+
+type SignOutError = {
+  code: string;
+  message: string;
+};
+export type { LoginCode, SignUpCode, SignUpError, LoginError, SignOutError };

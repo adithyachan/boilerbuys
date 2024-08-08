@@ -1,4 +1,5 @@
 "use client";
+
 import { TextInput, PasswordInput, Group, Anchor, Button } from "@mantine/core";
 import { useFormStatus, useFormState } from "react-dom";
 import { useActionState, useEffect } from "react";
@@ -23,7 +24,10 @@ export default function SignUpForm() {
 
   return (
     <form action={formAction}>
-      <Group>
+      <Group
+        justify="space-between"
+        className="sm:flex-row flex-col w-full mb-4"
+      >
         <TextInput
           name="firstname"
           label="First Name"

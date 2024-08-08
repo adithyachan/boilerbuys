@@ -23,25 +23,23 @@ export default function Hero() {
           </Text>
         </Container>
 
-        <div
+        {/*<div
           className="mt-5 flex xs:flex-row justify-center flex-col \
               xs:space-x-4 space-y-4 xs:space-y-0"
         >
-          <Link href="/login">
-            <Button
-              size="lg"
-              variant="default"
-              color="gray"
-              className="text-base \
+          <Button
+            size="lg"
+            variant="default"
+            color="gray"
+            className="text-base \
           xs:text-lg"
-            >
-              Log in
-            </Button>
-          </Link>
-          <Button size="lg" className="text-base xs:text-lg">
-            Sign up
+          >
+            <Link href="/auth/login">Log in</Link>
           </Button>
-        </div>
+          <Button size="lg" className="text-base xs:text-lg">
+            <Link href="/auth/signup">Sign up</Link>
+          </Button>
+        </div>*/}
       </div>
     </Container>
   );

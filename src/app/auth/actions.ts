@@ -16,7 +16,10 @@ export async function login(
   const supabase = createClient();
   console.log(formData);
   try {
-    const data = loginSchema.parse(formData);
+    const data = loginSchema.parse({
+      email: formData.get("email"),
+      password: formData.get("password"),
+    });
     const { error } = await supabase.auth.signInWithPassword(data);
 
     if (error) {
@@ -24,8 +27,8 @@ export async function login(
       return { errors: [e] };
     }
 
-    revalidatePath("/private");
-    redirect("/private");
+    revalidatePath("/");
+    redirect("/");
   } catch (e) {
     console.log(e);
     if (e instanceof ZodError) {
@@ -65,8 +68,8 @@ export async function signup(
       return { errors: [e] };
     }
 
-    revalidatePath("/private");
-    redirect("/private");
+    revalidatePath("/");
+    redirect("/");
   } catch (e) {
     console.log(e);
     if (e instanceof ZodError) {

@@ -1,0 +1,52 @@
+"use client";
+import { Group, Button, Text, Box } from "@mantine/core";
+import Link from "next/link";
+import { AuthError, User } from "@supabase/supabase-js";
+import useSupabaseClient from "@/utils/supabase/client";
+import { useEffect, useState } from "react";
+
+export async function Header() {
+  const supabase = useSupabaseClient();
+  const [user, setUser] = useState<User | null>(null);
+
+  const logout = async () => {
+    const error = await supabase.auth.signOut();
+
+    if (error instanceof AuthError) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    const { data, error } = await supabase.auth.getUser();
+  }, []);
+
+  return (
+    <Box pb={120}>
+      <header className="h-16 px-4 border-b-gray-300">
+        <Group justify="space-between" h="100%">
+          <Text c="old-gold" size="xl">
+            BoilerBuys
+          </Text>
+          {error || !data?.user ? (
+            <Group>
+              <Button variant="default">
+                <Link href="/auth/login">Log in</Link>
+              </Button>
+              <Button>
+                <Link href="/auth/signup">Sign up</Link>
+              </Button>
+            </Group>
+          ) : (
+            <Group>
+              <Text>{data.user.email}</Text>
+              <Button onClick={logout} variant="default">
+                Log Out
+              </Button>
+            </Group>
+          )}
+        </Group>
+      </header>
+    </Box>
+  );
+}
